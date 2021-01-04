@@ -39,6 +39,7 @@ requests:
       - "{{BaseURL}}/__swagger__/"
       - "{{BaseURL}}/_swagger_/"
       - "{{BaseURL}}/swagger-resources/restservices/v2/api-docs"
+      - "{{BaseURL}}/swagger/ui/index"
 
     matchers-condition: and
     matchers:
@@ -46,6 +47,7 @@ requests:
         words:
           - "\"swagger\":"
           - "Swagger UI"
+          - "swagger-ui"
         condition: or
 
       - type: status
