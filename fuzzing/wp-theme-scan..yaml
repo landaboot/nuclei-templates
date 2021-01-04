@@ -1,0 +1,35 @@
+id: wp-theme-scan
+info:
+  name: Wordpress Theme Scanner
+  author: landaboot
+  severity: info
+  description: wordlist based wordpress theme scanner based on @pdteam template.
+
+requests:
+
+  - payloads:
+      theme_wordlist: wordlists/wp-themes.txt
+
+      # This template was created based on pdteam wp-plugin-scan.yaml
+      # The updated list can be fetched on https://data.wpscan.org/metadata.json
+
+    attack: sniper
+    threads: 50
+
+    raw:
+      - |
+        GET /§theme_wordlist§ HTTP/1.1
+        Host: {{Hostname}}
+        Accept: application/json, text/plain, */*
+        Accept-Language: en-US,en;q=0.5
+        Referer: {{BaseURL}}
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "== Description =="
