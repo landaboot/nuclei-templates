@@ -1,0 +1,25 @@
+id: citrix-xenmobile
+
+info:
+  name: Citrix Xenmobile Panel
+  author: landaboot
+  severity: info
+
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/zdm/login_xdm_uc.jsp"
+      - "{{BaseURL}}/"
+    
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - XenMobile - Console
+          - XenMobile
+          - zenprise.ico
+
+
+
+

@@ -1,0 +1,26 @@
+id: netscaler-aaa
+
+info:
+  name: Netscaler AAA
+  author: landaboot
+  severity: info
+
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/logon/LogonPoint/tmindex.html"
+      - "{{BaseURL}}/vpn/index.html"
+      - "{{BaseURL}}/"
+    
+    matchers-condition: or
+    matchers:
+      - type: word
+        words:
+          - <title class="_ctxstxt_NetscalerAAA">NetScaler AAA</title>
+          - Netscaler AAA
+          - NetscalerAAA
+
+
+
+

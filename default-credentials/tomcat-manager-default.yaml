@@ -9,6 +9,11 @@ requests:
   - payloads:
       username:
         - admin
+        - tomcat
+        - root
+        - manager
+        - role1
+        - both
 
       password:
         - admin
@@ -17,6 +22,13 @@ requests:
         - test
         - 12345
         - 123456
+        - manager
+        - role1
+        - root
+        - tomcat
+        - s3cret
+        - vagrant
+
 
     attack: clusterbomb  # Available options: sniper, pitchfork and clusterbomb
 

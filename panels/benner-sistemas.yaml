@@ -1,0 +1,24 @@
+id: benner-panel
+
+info:
+  name: Painel Juridico Benner Sistemas
+  author: landaboot
+  severity: info
+
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/Login"
+    
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - Benner Sistemas
+          - css/benner.min.css
+    
+
+
+
+
