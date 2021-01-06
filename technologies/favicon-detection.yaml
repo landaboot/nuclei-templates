@@ -11,6 +11,7 @@ info:
     - https://github.com/devanshbatham/FavFreak
     - https://github.com/sansatart/scrapts/blob/master/shodan-favicon-hashes.csv
 
+    # added 2 WSO2 verifications by 
 requests:
   - method: GET
     path:
@@ -28,6 +29,11 @@ requests:
         name: blogger
         dsl:
           - "len(body)==3638 && status_code==200 && (\"59a0c7b6e4848ccdabcea0636efda02b\" == md5(body))"
+      - type: regex
+        name: WSO2
+        part: header
+        regex:
+          - "Location.*wso2.*favicon.ico"
       - type: dsl
         name: oracle
         dsl:
@@ -44,6 +50,10 @@ requests:
         name: "slack-instance"
         dsl:
           - "status_code==200 && (\"99395752\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "benner-sistemas"
+        dsl:
+          - "status_code==200 && (\"-1146423827\" == mmh3(base64_py(body)))"
       - type: dsl
         name: "spring-boot"
         dsl:

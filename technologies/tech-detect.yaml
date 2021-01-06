@@ -2741,3 +2741,12 @@ requests:
           - "maintained by Netgate"
         part: body
         condition: and
+      
+      - type: word
+        name: Lumis-CMS
+        words:
+          - "lumis-theme"
+          - "LumisXP"
+          - "LumisPortal.js"
+          - "g_LumisLocale"
+        condition: or
