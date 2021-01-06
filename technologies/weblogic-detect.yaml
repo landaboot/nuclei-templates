@@ -5,13 +5,31 @@ info:
   author: bing0o
   severity: info
 
+  # modified by @landaboot
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/console/login/LoginForm.jsp"
       - "{{BaseURL}}:7001/console/login/LoginForm.jsp"
+      - "{{BaseURL}}/consolehelp/console-help.portal"
+      - "{{BaseURL}}/wls-wsat/ParticipantPortType"
+      - "{{BaseURL}}/wls-wsat/RegistrationRequesterPortType"
+      - "{{BaseURL}}/wls-wsat/RegistrationRequesterPortType11"
+      - "{{BaseURL}}/wls-wsat/RegistrationPortTypeRPC"
+      - "{{BaseURL}}/wls-wsat/RegistrationPortTypeRPC11"
+      - "{{BaseURL}}/wls-wsat/CoordinatorPortType"
+      - "{{BaseURL}}/wls-wsat/CoordinatorPortType11"
+      - "{{BaseURL}}/wls-wsat/ParticipantPortType11"
 
+      
+    status: 200
+    matcher-condition: or
     matchers:
       - type: word
         words:
           - "WebLogic"
+          - "weblogic"
+          - "Web Services"
+
+
