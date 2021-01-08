@@ -1,0 +1,24 @@
+id: lumis-cms-panel
+
+info:
+  name: Lumis CMS Panel
+  author: landaboot
+  severity: info
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/login.jsp"
+      - "{{BaseURL}}/Login.jsp"
+      - "{{BaseURL}}/admin.jsp"
+      - "{{BaseURL}}/default.jsp"
+    redirects: true
+    status: 200
+    condition: or
+    matchers:
+      - type: word
+        words:
+          - "Lumis Experience Platform"
+          - lumis/portal/client/images/ilustra.svg
+          - <title>Login - LumisXP</title>
+        part: body
