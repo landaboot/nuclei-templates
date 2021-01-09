@@ -11,6 +11,7 @@ Templates are the core of [nuclei scanner](https://github.com/projectdiscovery/n
 
 An overview of the nuclei template directory including number of templates and HTTP request associated with each directory. 
 
+<<<<<<< HEAD
 ### Nuclei templates `v7.3.6` overview
 
 | Templates          | Counts                           | Templates                 | Counts                                  |
@@ -26,6 +27,23 @@ An overview of the nuclei template directory including number of templates and H
 
 
 ### Nuclei templates `v7.3.6` tree overview
+=======
+### Nuclei templates `v5.0.3` overview
+
+| Templates | Counts | Templates | Counts |
+|----|----|----|----|
+| cves | 139 | files | 43 |
+| vulnerabilities | 43 | panels | 40 |
+| technologies | 41 | security-misconfiguration | 24 |
+| workflows | 16 | tokens | 8 |
+| dns | 6 | fuzzing | 7 |
+| generic-detections | 3 | default-credentials | 3 |
+| subdomain-takeover | 2 | payloads | 2 |
+| wordlists | 1 | misc | 12 |
+
+
+### Nuclei templates `v5.0.3` tree overview
+>>>>>>> 3d866cdce17d287cbc968c86fd669c0f3d271ac5
 
 <details>
 <summary> Nuclei templates </summary>
@@ -251,6 +269,7 @@ An overview of the nuclei template directory including number of templates and H
 ├── fuzzing
 │   ├── arbitrary-file-read.yaml
 │   ├── basic-auth-bruteforce.yaml
+│   ├── basic_ssrf.yaml
 │   ├── directory-traversal.yaml
 │   ├── generic-lfi-fuzzing.yaml
 │   ├── iis-shortname.yaml
@@ -416,10 +435,13 @@ An overview of the nuclei template directory including number of templates and H
 │   ├── couchdb-adminparty.yaml
 │   ├── crlf-injection.yaml
 │   ├── discourse-xss.yaml
+│   ├── django-debugmode.yaml
 │   ├── easy-wp-smtp-listing.yaml
 │   ├── eclipse-help-system-xss.yaml
+│   ├── first-line-path-traversal.yaml
 │   ├── git-config-nginxoffbyslash.yaml
 │   ├── ibm-infoprint-directory-traversal.yaml
+│   ├── kiwi-information-disclosure.yaml
 │   ├── mcafee-epo-rce.yaml
 │   ├── microstrategy-ssrf.yaml
 │   ├── mida-eframework-xss.yaml
@@ -434,6 +456,7 @@ An overview of the nuclei template directory including number of templates and H
 │   ├── rce-shellshock-user-agent.yaml
 │   ├── rce-via-java-deserialization.yaml
 │   ├── rconfig-rce.yaml
+│   ├── reverse_proxy_ssrf.yaml
 │   ├── sassy-social-share.yaml
 │   ├── sick-beard-xss.yaml
 │   ├── springboot-actuators-jolokia-xxe.yaml

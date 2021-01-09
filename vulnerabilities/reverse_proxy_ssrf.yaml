@@ -1,0 +1,18 @@
+id: reverse_proxy_ssrf
+
+info:
+  name: Reverse Proxy misconfiguration leads to SSRF
+  author: act1on3
+  severity: high
+
+requests:
+  - method: GET
+    path:
+      - '{{BaseURL}}/@h5n1tbn8qh6qe06dpnfx2xng47axym.c.act1on3.site'
+      - '{{BaseURL}}/.h5n1tbn8qh6qe06dpnfx2xng47axym.c.act1on3.site'
+    matchers:
+      - type: word
+        name: ssrf-response-body
+        words:
+          - '<html><body>ixq105k6wse36l44e350exzjjgz</body></html>'
+        part: body
