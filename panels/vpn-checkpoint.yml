@@ -1,0 +1,26 @@
+id: vpn-checkpoint
+
+info:
+  name: CheckPoint VPN Portal
+  author: landaboot
+  severity: info
+
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/sslvpn/Login/Login"
+      - "{{BaseURL}}/sslvpn/Login/Login/"
+      - "{{BaseURL}}/sslvpn"
+      - "{{BaseURL}}/sslvpn/"
+    
+    condition: or
+    matchers:
+      - type: word
+        words:
+          - "Check Point"
+          - "checkpoint"
+          - "/sslvpn/Login/images/pix.gif"
+          - "CheckCookieSupport"
+
+

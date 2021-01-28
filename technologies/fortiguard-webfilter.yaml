@@ -1,0 +1,22 @@
+id: fortiguard-webfilter
+
+info:
+  name: Fortiguard WebFilter
+  author: landaboot
+  severity: info
+
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/"
+      - "{{BaseURL}}:8010/"
+      - "{{BaseURL}}:8020/"
+      - "{{BaseURL}}:9020/"
+      - "{{BaseURL}}:8008/"
+
+    condition: or
+    matchers:
+      - type: dsl
+        dsl:
+          - "(status_code==200 && contains(body,'<title>Web Filter Block Override')) || (status_code==200 && contains(body,'<h1>FortiGuard Web Filtering'))"

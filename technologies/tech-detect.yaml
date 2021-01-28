@@ -2,6 +2,7 @@ id: tech-detect
 info:
   name: Wappalyzer Technology Detection
   author: hakluke
+  # Lumis and OpenShift added by @landaboot
   severity: info
 requests:
   - method: GET
@@ -2745,12 +2746,15 @@ requests:
       - type: word
         name: Lumis-CMS
         words:
-          - "lumis-theme"
           - "LumisXP"
           - "LumisPortal.js"
           - "g_LumisLocale"
         condition: or
-
-        
-
-
+    
+      - type: word
+        name: OpenShift-Router
+        words:
+          - "(pods, services, deployment configs, route, etc)"
+          - "(pods, services, deployment configs, etc)"
+          - "<strong>Route and path matches, but all pods are down.</strong>"
+        condition: or

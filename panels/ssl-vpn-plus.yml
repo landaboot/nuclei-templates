@@ -1,0 +1,20 @@
+id: ssl-vpn-plus
+
+info:
+  name: VMWare SSL VPN Plus
+  author: landaboot
+  severity: info
+
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/sslvpn-plus/doaction.svp?type=login"
+    
+    matchers:
+      - type: word
+        words:
+          - "/sslvpn-plus/svp_logout.html"
+          - "/sslvpn-plus/images/stylesheets/portal_style.css"
+          - "/sslvpn-plus/doaction.svp"
+          - "<title>SSL VPN-Plus&#8482</title>"

@@ -1,0 +1,17 @@
+id: openshift-router
+
+info:
+  name: Open Shift Cluster
+  author: landaboot
+  severity: info
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/"
+    matchers:
+      - type: word
+        words:
+          - "(pods, services, deployment configs, route, etc)"
+          - "(pods, services, deployment configs, etc)"
+          - "<strong>Route and path matches, but all pods are down.</strong>"

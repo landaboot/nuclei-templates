@@ -1,0 +1,21 @@
+id: suntech-vigia-interception-suite
+
+info:
+  name: Vigia Interception Suite
+  author: landaboot
+  severity: info
+
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/login.html"
+      - "{{BaseURL}}/"
+      - "{{BaseURL}}/Login.html"
+
+    condition: or
+    matchers:
+      - type: dsl
+        dsl:
+          - "status_code==200 && contains(body, 'Vigia Interception Achievement Suite')"
+          - "status_code==200 && contains(body, '<title>Suntech Vigia')"

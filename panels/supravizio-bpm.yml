@@ -1,0 +1,24 @@
+id: supravizio-bpm
+
+info:
+  name: Supravizio BPM Ven
+  author: landaboot
+  severity: info
+
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+    
+    matchers:
+      - type: word
+        words:
+          - "logo_supravizio.png"
+          - "Supravizio/Portal"
+          - "Supravizio Portal - Venki"
+          - "/Supravizio/WebResource.axd"
+          - "www.supravizio.com"
+          - "Supravizio"
+          - "supravizio"
+          - "http://www.venki.com.br/ferramenta-bpm/"

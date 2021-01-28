@@ -1,0 +1,23 @@
+id: lecom-bpm
+
+info:
+  name: Lecom BPM Platform
+  author: landaboot
+  severity: info
+
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/favicon.ico"
+      - "{{BaseURL}}/sso/fav_lecom.ico"
+      - "{{BaseURL}}/sso/favicon.ico"
+      - "{{BaseURL}}/sso"
+
+    condition: or
+    matchers:
+      - type: dsl
+        dsl:
+          - "status_code==200 && (\"228107904\" == mmh3(base64_py(body)))"
+          - "(status_code==200 && (\"1118072085\" == mmh3(base64_py(body))))"
+          - "status_code==200 && contains(body, 'SSO_PAGINA_LOGIN')"
